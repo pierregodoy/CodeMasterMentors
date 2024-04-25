@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Responses\ApiResponse;
 use Illuminate\Http\Request;
 use App\Models\Advertisement;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class AdvertisementController extends Controller

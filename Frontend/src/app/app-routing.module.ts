@@ -9,6 +9,13 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AdvertisementComponent } from './components/advertisement/advertisement.component';
+import { UserManagementComponent } from './components/user-management/user-management.component';
+import { AdvertisementManagementComponent } from './components/advertisement-management/advertisement-management.component';
+import { MisAnunciosComponent } from './components/mis-anuncios/mis-anuncios.component';
+import { CrearAnuncioComponent } from './components/crear-anuncio/crear-anuncio.component';
+import { AdminEditUserComponent } from './components/admin-edit-user/admin-edit-user.component';
+import { FavouriteListComponent } from './components/favourite-list/favourite-list.component';
+
 
 const routes: Routes = [
 
@@ -21,6 +28,8 @@ const routes: Routes = [
   { path: 'advertisement/:advertisementId', component: AdvertisementComponent },
   {path: 'userManagement', component: UserManagementComponent},
   {path: 'adManagement', component: AdvertisementManagementComponent},
+  {path: 'editUser', component: AdminEditUserComponent},
+  { path: 'favouriteList', component: FavouriteListComponent },
 
 
 

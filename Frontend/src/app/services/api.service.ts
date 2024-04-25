@@ -122,4 +122,17 @@ export class ApiService {
     return this.http.post<any>(`${this.apiUrl}advertisements`, nuevoAnuncio, httpOptions);
   }
 
+  //----------------------------------------------------------------
+
+  // Método para eliminar un anuncio por su ID
+  deleteAdvertisement(advertisementId: string): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}advertisements/${advertisementId}`);
+  }
+
+  // Método para eliminar un usuario por su ID
+  deleteUser(userId: string): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}users/${userId}`);
+  }
 }
+
+
