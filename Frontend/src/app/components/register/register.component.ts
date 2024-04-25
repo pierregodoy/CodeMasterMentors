@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -22,6 +23,7 @@ export class RegisterComponent implements OnInit {
   errorMessage: string = '';
   emailPattern: any;
   roles: any = [];
+
 
   @Output() hideFooter: EventEmitter<boolean> = new EventEmitter<boolean>();
 
