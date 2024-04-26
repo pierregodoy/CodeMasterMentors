@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-advertisement',
   templateUrl: './advertisement.component.html',
@@ -9,10 +9,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class AdvertisementComponent implements OnInit {
   advertisementId: string = '';
-  advertisementData: any = {}; // Debes definir la estructura de tu modelo de datos para el anuncio
+  advertisementData: any = {};
   programmingLanguages: any = [];
   users: any = [];
-
+  comments: any = []; // Variable para almacenar los comentarios
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) { }
 
@@ -41,7 +41,7 @@ export class AdvertisementComponent implements OnInit {
 
     this.getProgrammingLanguages();
     this.getUsers();
-
+    this.getComments(); // Obtener los comentarios al inicializar el componente
   }
 
   getProgrammingLanguages() {
@@ -55,8 +55,18 @@ export class AdvertisementComponent implements OnInit {
     this.apiService.getUsers().subscribe((users: any) => {
       this.users = users;
        console.log('Users:', users);
-
     });
   }
-}
 
+  getComments() {
+    this.apiService.getComments().subscribe((comments: any) => {
+      this.comments = comments;
+      console.log('Comments:', comments);
+    });
+  }
+
+  // Método para obtener una matriz de la longitud de la calificación
+  getRatingArray(rating: number): any[] {
+    return Array(rating).fill(0);
+  }
+}
