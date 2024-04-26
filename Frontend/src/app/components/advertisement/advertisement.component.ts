@@ -12,7 +12,7 @@ export class AdvertisementComponent implements OnInit {
   advertisementData: any = {}; // Debes definir la estructura de tu modelo de datos para el anuncio
   programmingLanguages: any = [];
   users: any = [];
-
+  comments: any = [];
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) { }
 
@@ -41,7 +41,7 @@ export class AdvertisementComponent implements OnInit {
 
     this.getProgrammingLanguages();
     this.getUsers();
-
+    this.getComments(); // Obtener los comentarios al inicializar el componente
   }
 
   getProgrammingLanguages() {
@@ -56,6 +56,13 @@ export class AdvertisementComponent implements OnInit {
       this.users = users;
        console.log('Users:', users);
 
+    });
+  }
+
+  getComments() {
+    this.apiService.getComments().subscribe((comments: any) => {
+      this.comments = comments;
+      console.log('Comments:', comments);
     });
   }
 }

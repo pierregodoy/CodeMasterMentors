@@ -25,6 +25,11 @@ export class ApiService {
 
   //----------------------------------------------------------------------
 
+  getComments(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}comments`);
+  }
+
+  //----------------------------------------------------------------------
 
   getUsers(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}users`);
